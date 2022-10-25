@@ -24,13 +24,13 @@ export default createStore({
     },
   },
   mutations: {
-    UPDATEFORMDATA(state, data) {
+    UPDATE_FORM_DATA(state, data) {
       state.formData = data;
     },
-    REMOVEERRORS(state) {
+    REMOVE_ERRORS(state) {
       state.errors = [];
     },
-    SETERRORS(state, data) {
+    SET_ERRORS(state, data) {
       state.errors.push(...data);
     },
   },

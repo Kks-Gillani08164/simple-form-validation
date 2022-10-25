@@ -180,7 +180,7 @@ export default {
         this.formData.password,
         this.formData.confirmPassword
       );
-      // const checkPhone = this.validPhone(this.formData.phone);
+      const checkPhone = this.validPhone(this.formData.phone);
 
       this.localerrors = [];
       this.localerrors.push(
@@ -189,17 +189,18 @@ export default {
           checkName,
           emailCheck,
           checkPassword,
-          // checkPhone,
+          checkPhone,
         ].filter((el) => el !== true)
       );
 
       if (this.localerrors.length > 0) {
-        this.$store.commit("SETERRORS", this.localerrors);
+        this.$store.commit("SET_ERRORS", this.localerrors);
       }
 
       if (this.localerrors.every((el) => el === true)) {
-        this.$store.commit("UPDATEFORMDATA", this.formData);
-        this.$store.commit("REMOVEERRORS");
+        this.$store.commit("UPDATE_FORM_DATA", this.formData);
+        this.$store.commit("REMOVE_ERRORS");
+        alert("Form Submitted Successfully");
       }
     },
   },
