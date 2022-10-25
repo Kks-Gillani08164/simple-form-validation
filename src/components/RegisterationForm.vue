@@ -180,7 +180,7 @@ export default {
         this.formData.password,
         this.formData.confirmPassword
       );
-      const checkPhone = this.validPhone(this.formData.phone);
+      // const checkPhone = this.validPhone(this.formData.phone);
 
       this.localerrors = [];
       this.localerrors.push(
@@ -189,7 +189,7 @@ export default {
           checkName,
           emailCheck,
           checkPassword,
-          checkPhone,
+          // checkPhone,
         ].filter((el) => el !== true)
       );
 
